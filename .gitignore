@@ -126,3 +126,6 @@ dmypy.json
 
 # Ignore vscode
 .vscode
+
+# Ignore data
+data/
