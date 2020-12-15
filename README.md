@@ -100,7 +100,8 @@ The final result should be a structure like the following:
 
 To run the model simply run the `classification.py` file. I have created a basic run 
 script which downloads the main AlexNet model, and fine-tunes the model on our
-image classification task (identifying the landscape in the image). This will produce an output like the following
+image classification task (identifying the landscape in the image). This will 
+produce an output like the following
 
 ```
 Epoch | Train Loss | Train Accuracy | Test Loss | Test Accuracy |
