@@ -108,6 +108,22 @@ class Classifier:
 
         return model
 
+    def convertToONNX(self):
+        """
+        Converts the model to a ONNX model so it can be later converted to
+        tensorflow.
+        """
+        # Try to open the model
+        if self.import_model:
+            try:
+                self.model.load_state_dict(torch.load("models/model.pth"))
+            except FileNotFoundError as e:
+                raise e
+
+        # Convert the model to onnx
+        dummy_input = torch.randn(self.batch_size, 3, 224, 224).to(self.device)
+        torch.onnx.export(self.model, dummy_input, "models/model.onnx")
+
     def initialize_dataset(self, dataset_location: str):
         """
         Imports the data, resizes and turns into a DataLoader, at the
@@ -289,11 +305,13 @@ class Classifier:
                 transforms.ToTensor(),
             ]
         )
+        # Select a batch size of images randomly from the prediction folder
         random_images = random.sample(
             os.listdir(self.dataset_location + input_dir),
             self.batch_size,
         )
 
+        # Try to open the model
         if self.import_model:
             try:
                 self.model.load_state_dict(torch.load("models/model.pth"))
@@ -322,5 +340,6 @@ class Classifier:
 
 
 classifier = Classifier()
-classifier.train()
-classifier.test()
+# classifier.train()
+# classifier.test()
+classifier.convertToONNX()

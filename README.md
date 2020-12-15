@@ -127,4 +127,5 @@ Best Validation Accuracy: 0.9117
 
 This will train and save the model in the models directory, you can continue to
 use this model in further tasks by importing it. For now we simply use the 
-created model that is stored in the object, and run some randomized tests on it, which can be visually checked.
+created model that is stored in the object, and run some randomized tests on it, 
+which can be visually checked.
