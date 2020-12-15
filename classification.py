@@ -339,7 +339,7 @@ class Classifier:
         plt.show(block=True)
 
 
-classifier = Classifier()
-# classifier.train()
-# classifier.test()
-classifier.convertToONNX()
+if __name__ == "__main__":
+    classifier = Classifier()
+    classifier.train()
+    classifier.test()
