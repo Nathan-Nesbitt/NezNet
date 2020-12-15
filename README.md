@@ -1,5 +1,7 @@
-# Image CNN
-This is a python implementation of transfer learning on AlexNet. 
+# NezNet CNN
+This is a python implementation of transfer learning on AlexNet. Nothing super
+impressive, but it is a good starting point for transfer learning using new 
+datasets using PyTorch.
 
 ## Data
 
