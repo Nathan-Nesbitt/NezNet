@@ -130,3 +130,14 @@ This will train and save the model in the models directory, you can continue to
 use this model in further tasks by importing it. For now we simply use the 
 created model that is stored in the object, and run some randomized tests on it, 
 which can be visually checked.
+
+# Notes
+
+It should be noted that this data is not 100% optimal, there have been some 
+issues where images are not properly tagged in the original data, this has 
+lead to the occasional misclassification of certain images (glaciers 
+at times have unpredictable outcomes). Saying this, the result from this
+are still quite good at the model predicts >90%, but to increase this accuracy
+it may be worth it to scour the many images to find these problematic 
+classifications. (There are likely better ways of increasing the prediction 
+though)
