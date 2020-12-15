@@ -129,3 +129,6 @@ dmypy.json
 
 # Ignore data
 data/
+
+# Ignore models (we cannot keep, they are too big)
+models/
